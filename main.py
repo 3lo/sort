@@ -32,6 +32,8 @@ class Pillar:
                     arr[j], arr[j + 1] = arr[j + 1], arr[j]
         return arr
         '''
+        # need to pygame.draw.rect(screen, white, pygame.Rect(pillar_list[i].area[0], 240 - height, 10, 240))
+        # to draw over and get rid of the previous line
         pass
 
 
