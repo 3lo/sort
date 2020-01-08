@@ -19,15 +19,34 @@ class Pillar:
         self.area = area
         self.color = color
 
+    def swap(self):  # Method to update class attributes
+        # pass through 2 class instances, swap their .height attributes. should change that position's height
+        '''
+        n = len(arr)
+        for i in range(n):  # Traverse through all array elements
+            for j in range(0, n - i - 1):  # Last i elements are already in place
+                # traverse the array from 0 to n-i-1
+                # Swap if the element found is greater
+                #than the next element
+                if arr[j] > arr[j + 1]:
+                    arr[j], arr[j + 1] = arr[j + 1], arr[j]
+        return arr
+        '''
+        pass
 
-j = 0
-pillar_list = []
-for i in range(0, 32):
-    height = random.randint(1, 200)
-    pillar_list.append(Pillar((0 + j, 240 - height, 10, height), red))  # [x, y, width, height]
-    pygame.draw.rect(screen, pillar_list[i].color, pygame.Rect(pillar_list[i].area))
-    j = j + 10
 
+def background():
+    j = 0
+    pillar_list = []
+    for i in range(0, 32):
+        height = random.randint(1, 200)
+        pillar_list.append(Pillar((0 + j, 240 - height, 10, height), red))  # [x, y, width, height]
+        pygame.draw.rect(screen, pillar_list[i].color, pygame.Rect(pillar_list[i].area))
+        j = j + 10
+
+
+# pillar_list[i].swap
+background()
 
 while 1:
     for event in pygame.event.get():
