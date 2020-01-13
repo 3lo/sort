@@ -31,7 +31,7 @@ class Pillar:
                     arr[j].height, arr[j + 1].height = arr[j + 1].height, arr[j].height
             pygame.draw.rect(screen, black, pygame.Rect(arr[j].area[0], arr[j].area[1], 10, 240))  # clear line
             pygame.display.update()
-            # pygame.time.wait(500)
+            pygame.time.wait(500)
             x, y = arr[j].area[0], 240 - arr[j + 1].height
             pygame.draw.rect(screen, red, pygame.Rect(x, y, 10, arr[j + 1].height))  # draw new line
 
@@ -39,17 +39,14 @@ class Pillar:
 def background():
     j = 0
     pillar_list = []
-    height_list = []
     for i in range(0, 32):
         height = random.randint(1, 200)
-        height_list.append(height)
         pillar_list.append(Pillar((0 + j, 240 - height, 10, height), red))  # [x, y, width, height]
         pygame.draw.rect(screen, pillar_list[i].color, pygame.Rect(pillar_list[i].area))
         j = j + 10
     pygame.display.update()
     pygame.time.wait(1500)
-    print(height_list)
-    print(Pillar.bubbleSort(pillar_list))
+    Pillar.bubbleSort(pillar_list)
 
 
 background()
